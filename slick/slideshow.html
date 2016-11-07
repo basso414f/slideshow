@@ -15,20 +15,42 @@
 </body>
 <script>
 $(function(){
-    $('.slider').on('afterChange', function(event, slick, currentSlide){
-      console.log('change!')
-    });
-    $('.slider').slick({
-    autoplay: true,
-    fade: false,
-    autoplaySpeed: 5000,
-    dots: false,
-    infinite: true,
-    pauseOnHover: false,
-    slideToShow: 1,
-    centerMode: true,
-    centerPadding: '0px',
-    });
+  var countOfImg = 3
+  $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    console.log(nextSlide);
+    if(nextSlide == 0){
+      $('.slider').remove();
+      $('body').append('<div class="slider">');
+      $('.slider').append('<div><img data-lazy="../../picture//IMG_3663.JPG"></div>');
+      $('.slider').append('<div><img data-lazy="../../picture//IMG_3664.JPG"></div>');
+      $('.slider').append('<div><img data-lazy="../../picture//IMG_3665.JPG"></div>');
+      $('.slider').append('<div><img data-lazy="../../picture//IMG_3666.JPG"></div>');
+      $('.slider').slick({
+      autoplay: true,
+      fade: true,
+      speed: 10000,
+      autoplaySpeed: 5000,
+      dots: false,
+      infinite: true,
+      pauseOnHover: false,
+      slideToShow: 1,
+      centerMode: true,
+      centerPadding: '0px',
+      });
+    }
+  });
+  $('.slider').slick({
+  autoplay: true,
+  fade: true,
+  speed: 10000,
+  autoplaySpeed: 5000,
+  dots: false,
+  infinite: true,
+  pauseOnHover: false,
+  slideToShow: 1,
+  centerMode: true,
+  centerPadding: '0px',
+  });
 }); 
 </script>
 </html>
