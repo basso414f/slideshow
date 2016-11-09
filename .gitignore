@@ -1,3 +1,4 @@
+*.DS_Store
 slick/__pycache__/*
-slick/picture/*
-!slick/picture/.gitkeep
+slick/static/picture/*
+!slick/static/picture/.gitkeep
